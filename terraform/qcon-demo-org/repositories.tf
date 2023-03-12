@@ -3,18 +3,8 @@ provider "github" {
   owner = "qcon-demo-org"
 }
 
-resource "github_repository" "repo" {
-  name        = "project1"
-  description = "Project1 repo"
-  visibility  = "public"
-
-  auto_init              = false
-  allow_rebase_merge     = false
-  delete_branch_on_merge = true
-}
-
-resource "github_branch_protection" "default" {
-  repository_id                   = github_repository.repo.id
+resource "github_branch_protection_v3" "branch_protection_spring-petclinic" {
+  repository                      = "spring-petclinic"
   pattern                         = "main"
   require_conversation_resolution = true
   enforce_admins                  = true

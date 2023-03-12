@@ -3,9 +3,9 @@ provider "github" {
   owner = "qcon-demo-org"
 }
 
-resource "github_branch_protection_v3" "branch_protection_spring-petclinic" {
-  repository                      = "spring-petclinic"
-  branch                          = "main"
+resource "github_branch_protection" "branch_protection_spring-petclinic" {
+  repository_id                   = "spring-petclinic"
+  pattern                         = "main"
   require_conversation_resolution = true
   enforce_admins                  = true
 

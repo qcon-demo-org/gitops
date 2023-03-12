@@ -21,6 +21,6 @@ resource "github_branch_protection" "default" {
 
   required_pull_request_reviews {
     required_approving_review_count = 1
-    dismiss_stale_reviews      = true
+    dismiss_stale_reviews           = true
   }
 }

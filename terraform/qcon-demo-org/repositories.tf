@@ -3,12 +3,24 @@ provider "github" {
   owner = "qcon-demo-org"
 }
 
-resource "github_repository" "repo2" {
-  name        = "repo2"
-  description = "Test repo2"
+resource "github_repository" "project1" {
+  name        = "project1"
+  description = "Project1's repo"
   visibility  = "public"
 
   auto_init              = false
   allow_rebase_merge     = false
   delete_branch_on_merge = true
+}
+
+resource "github_branch_protection" "default" {
+  repository_id                   = github_repository.repo.id
+  pattern                         = github_branch_default.main.branch
+  require_conversation_resolution = true
+  enforce_admins                  = true
+
+  required_pull_request_reviews {
+    required_approving_review_count = 1
+    dismiss_stale_reviews      = true
+  }
 }

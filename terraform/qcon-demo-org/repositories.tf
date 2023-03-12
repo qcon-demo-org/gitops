@@ -1,3 +1,8 @@
+provider "github" {
+  app_auth {}
+  owner = "qcon-demo-org"
+}
+
 resource "github_repository" "repo2" {
   name        = "repo2"
   description = "Test repo2"

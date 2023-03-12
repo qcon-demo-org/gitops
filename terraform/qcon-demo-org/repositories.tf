@@ -15,7 +15,7 @@ resource "github_repository" "project1" {
 
 resource "github_branch_protection" "default" {
   repository_id                   = github_repository.repo.id
-  pattern                         = github_branch_default.main.branch
+  pattern                         = "main"
   require_conversation_resolution = true
   enforce_admins                  = true
 

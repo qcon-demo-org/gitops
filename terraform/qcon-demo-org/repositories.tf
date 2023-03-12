@@ -5,7 +5,7 @@ provider "github" {
 
 resource "github_repository" "repo" {
   name        = "project1"
-  description = "Project1's repo"
+  description = "Project1 repo"
   visibility  = "public"
 
   auto_init              = false

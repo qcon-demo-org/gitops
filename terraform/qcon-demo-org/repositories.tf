@@ -3,7 +3,7 @@ provider "github" {
   owner = "qcon-demo-org"
 }
 
-resource "github_repository" "project1" {
+resource "github_repository" "repo" {
   name        = "project1"
   description = "Project1's repo"
   visibility  = "public"

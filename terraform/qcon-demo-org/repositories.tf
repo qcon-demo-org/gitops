@@ -5,7 +5,7 @@ provider "github" {
 
 resource "github_branch_protection_v3" "branch_protection_spring-petclinic" {
   repository                      = "spring-petclinic"
-  pattern                         = "main"
+  branch                          = "main"
   require_conversation_resolution = true
   enforce_admins                  = true
 

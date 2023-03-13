@@ -20,7 +20,7 @@ resource "github_branch_protection" "branch_protection_spring-petclinic" {
     strict   = true
     contexts = ["Java CI with Maven"]
   }
-  
+
   required_pull_request_reviews {
     required_approving_review_count = 1
     dismiss_stale_reviews           = true

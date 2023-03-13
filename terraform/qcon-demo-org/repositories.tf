@@ -24,7 +24,7 @@ resource "github_branch_protection" "branch_protection_spring-petclinic" {
   required_pull_request_reviews {
     required_approving_review_count = 1
     dismiss_stale_reviews           = true
+    require_last_push_approval      = true
   }
 }
-
 
